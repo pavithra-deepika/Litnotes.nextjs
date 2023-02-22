@@ -4,16 +4,15 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import { useState } from 'react'
 import UserList from './components/UserList'
-// import styles from '../styles/Home.module.css'
-
-// const inter = Inter({ subsets: ['latin'] })
-
+import Todo from './pages/Todo'
+import Todos from './components/Todos'
+// import Todos from './components/UserList'
 export default function Home() {
   const [users, SetUsers] = useState([])
     async function fetchUser() {
       const data=await fetch("https://jsonplaceholder.typicode.com/users");
       const userData = await data.json();
-      console.log(userData)
+      // console.log(userData)
       SetUsers(userData)
     }
     
@@ -23,7 +22,11 @@ export default function Home() {
 
   return (
     <div>
-              <UserList users={users} />      
+      <div>
+        <h1>Lit Notes Json Plceholder</h1>
+      </div>
+              <UserList users={users} /> 
+              <Todos />     
 
     </div>
 
