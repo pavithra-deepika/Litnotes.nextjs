@@ -8,7 +8,7 @@ import { CardActions } from '@mui/material';
 import Link from 'next/link';
 
 
-export default function User({user,key}) {
+export default function User({user}) {
 
   return (
     <div>
@@ -22,8 +22,11 @@ export default function User({user,key}) {
             </Typography>
             </CardContent>
             <CardActions>
-              <Link href={ { pathname: "/pages/Todo", id : {key}}}>
+              <Link href={ { pathname: "/pages/Todo", query:{id:user.id}}}>
                 <button type="button" size="small">Todo </button>
+              </Link>
+              <Link href={ { pathname: "/pages/Post", query:{id:user.id}}}>
+                <button type="button" size="small">Post </button>
               </Link>
               </CardActions>
         </Card>
