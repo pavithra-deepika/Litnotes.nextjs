@@ -1,13 +1,14 @@
+import { Button } from '@mui/material';
 import Link from 'next/link';
 import Todos from '../components/Todos';
 function Todo() {
   return (
     <div>
-        <h5> Todo </h5>  
+        <h1> Todo </h1>  
         <Todos />
-        
+        <br></br>
         <div>
-            <h2><Link href="/"> Back to user list</Link></h2>
+            <Button variant="contained"><Link href="/"> Back to user list</Link></Button>
         </div>
     </div>
   )

@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import react, { useEffect } from 'react'
+import Box from '@mui/material/Box';
+
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import { useState } from 'react'
 import UserList from './components/UserList'
-import Todo from './pages/Todo'
-import Todos from './components/Todos'
-// import Todos from './components/UserList'
+import { Grid } from '@mui/material'
 export default function Home() {
   const [users, SetUsers] = useState([])
     async function fetchUser() {
@@ -21,14 +21,11 @@ export default function Home() {
     },[])
 
   return (
-    <div>
-      <div>
-        <h1>Lit Notes Json Plceholder</h1>
-      </div>
-              <UserList users={users} /> 
-              <Todos />     
+    <div > 
+      <h1 style={{color: "Red", marginLeft:"40%"}}> JSON data</h1>
 
+      <UserList users={users} /> 
     </div>
-
+         
   )
 }
